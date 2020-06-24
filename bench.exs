@@ -12,13 +12,13 @@ Benchee.run(
   %{
     "Mat" => fn x ->
       Enum.map(1..10, fn n ->
-        Bar.get_all_pages(x, n) |> Enum.to_list()
+        Mat.get_all_pages(x, n) |> Enum.to_list()
       end)
     end,
 
     "Lachlan" => fn x ->
       Enum.map(1..10, fn n ->
-        Foo.get_all_pages(x, n) |> Enum.to_list()
+        Lachlan.get_all_pages(x, n) |> Enum.to_list()
       end)
     end,
   },

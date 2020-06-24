@@ -1,4 +1,4 @@
-defmodule Bar do
+defmodule Mat do
   def all_pages(pages) do
     # %{
     #   key1: %{row: 1, content: "one"},
@@ -41,7 +41,7 @@ defmodule Bar do
   def get_next_pages(map, key, acc, per_page) do
     keyname = String.to_atom("key#{key}")
     case Map.get(map, keyname) do
-      %{row: num, content: text} = row ->
+      %{row: _, content: _} ->
         {:more, get_limited_pages(map, key, [], per_page) |> Enum.filter(&!is_nil(&1))}
       _ -> {:done, acc}
     end
